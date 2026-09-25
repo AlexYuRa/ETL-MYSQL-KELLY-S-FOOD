@@ -1,0 +1,34 @@
+# --- Datos fuente (información real del negocio) ---
+KellysFood_*.xlsx
+
+# --- Datos personales generados en ejecución (nombres + teléfonos) ---
+maestro_trabajadores.csv
+
+# --- Salidas intermedias y finales del ETL ---
+etl_paso*.pkl
+etl_paso*_*.xlsx
+kellys_food_entidades_*.xlsx
+kellys_food_entidades_todos.zip
+kellys_food_transformado_*.sql
+
+# --- Credenciales / configuración local ---
+.env
+.streamlit/secrets.toml
+.claude/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# --- Office / sistema ---
+~$*
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editores ---
+.vscode/
+.idea/
