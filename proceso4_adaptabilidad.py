@@ -360,7 +360,7 @@ def _literal_sql(valor):
     return f"'{texto}'"
 
 
-def generar_dataset_transformado_sql(entidades: dict, periodo: str, ruta_sql: str = None) -> str:
+def generar_dataset_transformado_sql(entidades: dict, periodo: str, ruta_sql: str | None = None) -> str:
     """
     Serializa el dataset ya transformado como un único script SQL:
     DDL (CREATE DATABASE/TABLE) + DML (INSERT / INSERT IGNORE).

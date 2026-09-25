@@ -35,6 +35,7 @@ Uso:
 
 import datetime
 import glob
+import pickle
 import sys
 
 import pandas as pd
@@ -147,7 +148,8 @@ def main():
 
     periodo = periodo_del_archivo(hojas)
     print(f"\n3) Guardando resultado intermedio en 'etl_paso1.pkl' (período {periodo})...")
-    pd.to_pickle(hojas, "etl_paso1.pkl")
+    with open("etl_paso1.pkl", "wb") as f:
+        pickle.dump(hojas, f)
 
     ruta_evidencia = f"etl_paso1_elementos_nulos_{periodo}.xlsx"
     print(f"4) Exportando evidencia a '{ruta_evidencia}'...")

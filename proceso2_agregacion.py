@@ -29,6 +29,7 @@ Uso:
 """
 
 import os
+import pickle
 import re
 
 import pandas as pd
@@ -117,7 +118,8 @@ def main():
 
     periodo = periodo_del_archivo(hojas)
     print("\n3) Guardando resultado intermedio en 'etl_paso2.pkl'...")
-    pd.to_pickle(hojas, "etl_paso2.pkl")
+    with open("etl_paso2.pkl", "wb") as f:
+        pickle.dump(hojas, f)
 
     ruta_evidencia = f"etl_paso2_agregacion_{periodo}.xlsx"
     print(f"4) Exportando evidencia a '{ruta_evidencia}'...")

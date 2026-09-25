@@ -31,6 +31,7 @@ Uso:
 """
 
 import datetime
+import pickle
 import re
 import unicodedata
 
@@ -179,7 +180,8 @@ def main():
 
     periodo = periodo_del_archivo(hojas)
     print("\n3) Guardando resultado intermedio en 'etl_paso3.pkl'...")
-    pd.to_pickle(hojas, "etl_paso3.pkl")
+    with open("etl_paso3.pkl", "wb") as f:
+        pickle.dump(hojas, f)
 
     ruta_evidencia = f"etl_paso3_normalizacion_{periodo}.xlsx"
     print(f"4) Exportando evidencia a '{ruta_evidencia}'...")
